@@ -46,6 +46,7 @@ The HMI is divided into two main screens:
 
 - PROCESS OVERVIEW: real-time process visualization
 - ![Process Overview](screenshots/st_processing.png)
+
 - CONTROL PANEL: operator commands (start/stop, mode selection, recipe selection)
 - 
 
