@@ -7,7 +7,8 @@ This project is an industrial automation system developed in Siemens TIA Portal 
 
 The system simulates an automated tank process with modular PLC architecture, including control logic, recipe management, and process simulation.
 
-The system architecture is described in detail in the plc-architecture section.
+The system architecture is described in detail in the plc-architecture section
+
 ---
 
 ## System Features
