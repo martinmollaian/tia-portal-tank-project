@@ -42,6 +42,8 @@ Simulates the physical process:
 - Sensor behavior
 - Fault simulation (stuck actuator, sensor failure)
 
+<img src="screenshots/tank_sim.png" width="350"/>
+
 ### FB_Supervision
 - Recipe Loading
 
