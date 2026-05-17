@@ -31,7 +31,6 @@ Core control logic of the system:
 - Actuator control (pump, valve)
 - Timeout and fault detection
  <p align="center">
-  <img src="screenshots/st_idle_manual.png" width="400"/>
   <img src="screenshots/st_filling_processing.png" width="400"/>
   <img src="screenshots/st_draining_fault.png" width="400"/>
 </p>
