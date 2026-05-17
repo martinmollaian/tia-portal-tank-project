@@ -30,6 +30,12 @@ Core control logic of the system:
 - Mode management (AUTO / MANUAL)
 - Actuator control (pump, valve)
 - Timeout and fault detection
+ <p align="center">
+  <img src="screenshots/st_idle_manual.png" width="400"/>
+  <img src="screenshots/st_filling_processing.png" width="400"/>
+  <img src="screenshots/st_draining_fault.png" width="400"/>
+</p>
+
 
 ### FB_TankSimulation
 Simulates the physical process:
@@ -61,7 +67,7 @@ The HMI is divided into two main screens:
   <img src="screenshots/cmd_automode.png" width="480"/>
 </p>
 
--### ALARMS / FAULTS MANAGEMENT
+ALARMS / FAULTS MANAGEMENT
 
 
 <p align="center">
