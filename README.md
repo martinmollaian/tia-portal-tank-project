@@ -42,16 +42,25 @@ Simulates the physical process:
 - Sensor behavior
 - Fault simulation (stuck actuator, sensor failure)
 
-<img src="screenshots/tank_sim.png" width="350"/>
+<p align="center">
+  <img src="screenshots/tank_sim1.png" width="400"/>
+  <img src="screenshots/tank_sim2.png" width="350"/>
+</p>
 
 ### FB_Supervision
 - Recipe Loading
+
+<p align="center">
+  <img src="screenshots/fb_supervision.png" width="400"/>
+  <img src="screenshots/db_recipes.png" width="400"/>
+</p>
 
 ## HMI Interface
 
 The HMI is divided into two main screens:
 
 - PROCESS OVERVIEW: real-time process visualization
+
 
 
  <p align="center">
@@ -63,12 +72,14 @@ The HMI is divided into two main screens:
 - CONTROL PANEL: operator commands (start/stop, mode selection, recipe selection)
 
 
+
 <p align="center">
   <img src="screenshots/cmd_panel.png" width="480"/>
   <img src="screenshots/cmd_automode.png" width="480"/>
 </p>
 
-ALARMS / FAULTS MANAGEMENT
+ALARMS / FAULTS 
+
 
 
 <p align="center">
