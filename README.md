@@ -46,6 +46,7 @@ The HMI is divided into two main screens:
 
 - PROCESS OVERVIEW: real-time process visualization
 
+
  <p align="center">
   <img src="screenshots/overview.png" width="480"/>
   <img src="screenshots/st_processing.png" width="480"/>
@@ -54,6 +55,7 @@ The HMI is divided into two main screens:
 
 - CONTROL PANEL: operator commands (start/stop, mode selection, recipe selection)
 
+
 <p align="center">
   <img src="screenshots/cmd_panel.png" width="480"/>
   <img src="screenshots/cmd_automode.png" width="480"/>
@@ -61,9 +63,10 @@ The HMI is divided into two main screens:
 
 -### ALARMS / FAULTS MANAGEMENT
 
+
 <p align="center">
-  <img src="screenshots/cmd_panel.png" width="480"/>
-  <img src="screenshots/cmd_automode.png" width="480"/>
+  <img src="screenshots/fault_fb_lost.png" width="480"/>
+  <img src="screenshots/fault_tm_pump.png" width="480"/>
 </p>
 ---
 
