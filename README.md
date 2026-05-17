@@ -46,16 +46,25 @@ The HMI is divided into two main screens:
 
 - PROCESS OVERVIEW: real-time process visualization
 
-  
- ![Process Overview](screenshots/st_processing.png)
+ <p align="center">
+  <img src="screenshots/overview.png" width="480"/>
+  <img src="screenshots/st_processing.png" width="480"/>
+</p>
+
 
 - CONTROL PANEL: operator commands (start/stop, mode selection, recipe selection)
 
-  
-![Control Panel](screenshots/cmd_panel.png)
+<p align="center">
+  <img src="screenshots/cmd_panel.png" width="480"/>
+  <img src="screenshots/cmd_automode.png" width="480"/>
+</p>
 
+-### ALARMS / FAULTS MANAGEMENT
 
-![Control Panel](screenshots/cmd_automode.png)
+<p align="center">
+  <img src="screenshots/cmd_panel.png" width="480"/>
+  <img src="screenshots/cmd_automode.png" width="480"/>
+</p>
 ---
 
 ## Technologies
