@@ -1,0 +1,115 @@
+IF #EStop THEN
+    #State := #STATE_FAULT;
+    #Error := #ESTOP_ACTIVATED;
+    #ErrorPresent := TRUE;
+    RETURN;
+END_IF;
+
+IF #StopCmd THEN
+    #PumpOn := FALSE;
+    #ValveOn := FALSE;
+    #State := #STATE_IDLE;
+    RETURN;
+END_IF;
+
+#tPumpTimeout(IN := (#State = #STATE_FILLING),PT := #ActiveRecipe.PumpTimeout);
+
+#tPumpFBTimeout(IN := (#PumpOn AND NOT #PumpFB), PT := T#2s);
+
+#tProcess(IN := (#State = #STATE_PROCESSING),PT := #ActiveRecipe.ProcessTime);
+
+#tValveTimeout(IN := (#State = #STATE_DRAINING),PT := #ActiveRecipe.DrainTimeout);
+
+#tValveFBTimeout(IN := (#ValveOn AND NOT #ValveFB) ,PT := T#2S);
+
+#rtStart(CLK := #StartCmd);
+
+#PumpOn := FALSE;
+#ValveOn := FALSE;
+#MotorMixing := FALSE;
+
+CASE #State OF
+        
+    0:  // IDLE
+        IF #ManualMode THEN
+            #State := #STATE_MANUAL;
+        ELSIF #rtStart.Q AND #AutoMode AND #RecipeLoaded THEN
+            #State := #STATE_FILLING;
+        END_IF;
+        
+    1:   // MANUAL
+        IF NOT #ErrorPresent THEN
+            #PumpOn := #ManualPumpCmd;
+            #ValveOn := #ManualValveCmd;
+            #MotorMixing := #ManualMixCmd;
+        ELSE
+            #PumpOn := FALSE;
+            #ValveOn := FALSE;
+            #MotorMixing := FALSE;
+        END_IF;
+        
+        IF NOT #ManualMode THEN
+            #State := #STATE_IDLE;
+        END_IF;
+        
+    10:  // FILLING
+        #Running := TRUE;
+        #PumpOn := TRUE;
+        #ValveOn := FALSE;
+        IF #TankLevel >= #ActiveRecipe.FillLevelTarget THEN
+            #State := #STATE_PROCESSING;
+        END_IF;
+        
+        IF #tPumpFBTimeout.Q THEN
+            #State := #STATE_FAULT;
+            #Error := #NO_FB_PUMP;
+            #"ErrorPresent" := TRUE;
+        END_IF;
+        IF #tPumpTimeout.Q THEN
+            #State := #STATE_FAULT;
+            #Error := #TIMEOUT_FILLING;
+            #"ErrorPresent" := TRUE;
+        END_IF;
+        
+    20: // PROCESSING
+        #PumpOn := FALSE;
+        #ValveOn := FALSE;
+        IF #ActiveRecipe.MixingProcess THEN
+            #MotorMixing := TRUE;
+        ELSE
+            #MotorMixing := FALSE;
+        END_IF;
+        IF #tProcess.Q THEN
+            #State := #STATE_DRAINING;
+        END_IF;
+        
+    30: // DRAINING
+        #PumpOn := FALSE;
+        #ValveOn := TRUE;
+        IF #TankLevel <= 0.0 THEN
+            #State := #STATE_FILLING;
+            #"Cycle Counter" := #"Cycle Counter" + 1;
+        END_IF;
+        IF #tValveFBTimeout.Q THEN
+            #State := #STATE_FAULT;
+            #Error := #NO_FB_VALVE;
+            #"ErrorPresent" := TRUE;
+        END_IF;
+        IF #tValveTimeout.Q THEN
+            #State := #STATE_FAULT;
+            #Error := #TIMEOUT_DRAINING;
+            #"ErrorPresent" := TRUE;
+        END_IF;
+        
+    99: // FAULT
+        #PumpOn := FALSE;
+        #ValveOn := FALSE;
+        #Running := FALSE;
+        IF #ResetCmd THEN
+            #State := #STATE_IDLE;
+            #Error := #NO_ERROR;
+            #"ErrorPresent" := FALSE;
+        END_IF;
+    ELSE  // Statement section ELSE
+        ;
+END_CASE;
