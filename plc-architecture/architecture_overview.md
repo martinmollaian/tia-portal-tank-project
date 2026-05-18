@@ -89,7 +89,7 @@ The automatic cycle starts only if:
 ### Control behavior
 - FB_Supervision handles recipe loading into DB_Recipes
 - FB_Tank executes the state machine sequence:
-  IDLE → FILLING → PROCESSING → DRAINING → IDLE
+  IDLE → FILLING → PROCESSING → DRAINING → FILLING
 - FB_TankSimulation provides real-time feedback signals
 
 ### Interrupt logic
