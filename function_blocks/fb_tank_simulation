@@ -1,0 +1,57 @@
+#tLevel(IN := NOT #tLevel.Q,
+        PT := T#100ms);
+
+#tPumpFB(IN := #PumpCmd,
+         PT := T#1s);
+
+#tValveFB(IN := #ValveCmd,
+          PT := T#1s);
+
+
+// Feedback simulation
+
+IF #SimPumpStuck THEN
+    #PumpFB := FALSE;
+ELSE
+    #PumpFB := #tPumpFB.Q;
+END_IF;
+
+IF #SimValveStuck THEN
+    #ValveFB := FALSE;
+ELSE
+    #ValveFB := #tValveFB.Q;
+END_IF;
+
+
+// Process simulation
+
+IF #tLevel.Q THEN
+    
+    IF NOT #SimSensorBroken THEN
+        
+        IF #PumpCmd AND #PumpFB THEN
+            #TankLevel := #TankLevel + 25;
+        END_IF;
+        
+        IF #ValveCmd AND #ValveFB THEN
+            #TankLevel := #TankLevel - 25;
+        END_IF;
+        
+        IF #SimLeak THEN
+            #TankLevel := #TankLevel - 5;
+        END_IF;
+        
+    END_IF;
+    
+END_IF;
+
+
+// Saturation
+
+IF #TankLevel > 100.0 THEN
+    #TankLevel := 100.0;
+END_IF;
+
+IF #TankLevel < 0.0 THEN
+    #TankLevel := 0.0;
+END_IF;
