@@ -26,7 +26,7 @@ The system architecture is described in detail in the plc-architecture section
 
 ## Main Components
 
-### FB_Tank 
+### [FB_Tank](function_blocks/fb_tank)
 Core control logic of the system:
 - State machine implementation
 - Mode management (AUTO / MANUAL)
@@ -35,14 +35,14 @@ Core control logic of the system:
  
 
 
-### FB_TankSimulation
+### [FB_Tank_Simulation](function_blocks/fb_tank_simulation)
 Simulates the physical process:
 - Tank level dynamics
 - Sensor behavior
 - Fault simulation (stuck actuator, sensor failure)
 
 
-### FB_Supervision
+### [FB_Supervision](fb_supervision)
 - Recipe Loading
 
 
