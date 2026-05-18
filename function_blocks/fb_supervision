@@ -1,0 +1,24 @@
+#Load_Trig(CLK := #LoadRecipeCmd);
+IF #Load_Trig.Q THEN
+    
+    CASE #SelectedRecipe OF
+            
+        1:
+            "DB_Recipes".ActiveRecipe := "DB_Recipes".Recipe_1;
+            #RecipeActiveIndex := 1;
+            
+        2:
+            "DB_Recipes".ActiveRecipe := "DB_Recipes".Recipe_2;
+            #RecipeActiveIndex := 2;
+            
+        3:
+            "DB_Recipes".ActiveRecipe := "DB_Recipes".Recipe_3;
+            #RecipeActiveIndex := 3;
+            
+        ELSE
+            #RecipeActiveIndex := 0;
+    END_CASE;
+    
+    #RecipeLoaded := TRUE;
+    
+END_IF;
