@@ -59,7 +59,14 @@ The HMI is divided into three screens:
   <img src="screenshots/hmi/overview_panel_processing.png" width="480"/>
 </p>
 
+ALARMS / FAULTS 
 
+
+
+<p align="center">
+  <img src="screenshots/hmi/ov_panel_fault_fb_lost.png" width="480"/>
+  <img src="screenshots/hmi/ov_panel_fault_tm_pump.png" width="480"/>
+</p>
 - CONTROL PANEL: operator commands (start/stop, mode selection, recipe selection)
 
 
@@ -69,15 +76,13 @@ The HMI is divided into three screens:
   <img src="screenshots/hmi/command_panel_automode.png" width="480"/>
 </p>
 
--- Recipe selection popup
-ALARMS / FAULTS HANDLING IN PROCESS OVERVIEW
-
-
-
-<p align="center">
-  <img src="screenshots/hmi/ov_panel_fault_fb_lost.png" width="480"/>
-  <img src="screenshots/hmi/ov_panel_fault_tm_pump.png" width="480"/>
+- RECIPE SELECTION POPUP
+  <p align="center">
+  <img src="screenshots/hmi/popup_panel_recipe_selection.png" width="400"/>
+  <img src="screenshots/hmi/popup_panel_recipe_selected.png" width="400"/>
 </p>
+
+
 ---
 
 ## Technologies
