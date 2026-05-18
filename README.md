@@ -26,16 +26,13 @@ The system architecture is described in detail in the plc-architecture section
 
 ## Main Components
 
-### FB_Tank
+### FB_Tank 
 Core control logic of the system:
 - State machine implementation
 - Mode management (AUTO / MANUAL)
 - Actuator control (pump, valve)
 - Timeout and fault detection
- <p align="center">
-  <img src="screenshots/state_machine/st_filling & processing.png" width="400"/>
-  <img src="screenshots/state_machine/st_draining & fault.png" width="400"/>
-</p>
+ 
 
 
 ### FB_TankSimulation
@@ -44,22 +41,14 @@ Simulates the physical process:
 - Sensor behavior
 - Fault simulation (stuck actuator, sensor failure)
 
-<p align="center">
-  <img src="screenshots/simulation/tank_sim1.png" width="400"/>
-  <img src="screenshots/simulation/tank_sim2.png" width="350"/>
-</p>
 
 ### FB_Supervision
 - Recipe Loading
 
-<p align="center">
-  <img src="screenshots/data_blocks/fb_supervision.png" width="400"/>
-  <img src="screenshots/data_blocks_db_recipes.png" width="400"/>
-</p>
 
 ## HMI Interface
 
-The HMI is divided into two main screens:
+The HMI is divided into three screens:
 
 - PROCESS OVERVIEW: real-time process visualization
 
@@ -80,7 +69,8 @@ The HMI is divided into two main screens:
   <img src="screenshots/hmi/command_panel_automode.png" width="480"/>
 </p>
 
-ALARMS / FAULTS 
+-- Recipe selection popup
+ALARMS / FAULTS HANDLING IN PROCESS OVERVIEW
 
 
 
