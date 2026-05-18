@@ -76,7 +76,7 @@ ALARMS / FAULTS
   <img src="screenshots/hmi/command_panel_automode.png" width="480"/>
 </p>
 
-- RECIPE SELECTION POPUP
+- RECIPE SELECTION POPUP (FROM CONTROL PANEL)
   <p align="center">
   <img src="screenshots/hmi/popup_panel_recipe_selection.png" width="400"/>
   <img src="screenshots/hmi/popup_panel_recipe_selected.png" width="400"/>
