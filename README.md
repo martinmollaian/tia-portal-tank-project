@@ -33,8 +33,8 @@ Core control logic of the system:
 - Actuator control (pump, valve)
 - Timeout and fault detection
  <p align="center">
-  <img src="screenshots/st_filling_processing.png" width="400"/>
-  <img src="screenshots/st_draining_fault.png" width="400"/>
+  <img src="screenshots/state_machine/st_filling & processing.png" width="400"/>
+  <img src="screenshots/state_machine/st_draining & fault.png" width="400"/>
 </p>
 
 
@@ -45,16 +45,16 @@ Simulates the physical process:
 - Fault simulation (stuck actuator, sensor failure)
 
 <p align="center">
-  <img src="screenshots/tank_sim1.png" width="400"/>
-  <img src="screenshots/tank_sim2.png" width="350"/>
+  <img src="screenshots/simulation/tank_sim1.png" width="400"/>
+  <img src="screenshots/simulation/tank_sim2.png" width="350"/>
 </p>
 
 ### FB_Supervision
 - Recipe Loading
 
 <p align="center">
-  <img src="screenshots/fb_supervision.png" width="400"/>
-  <img src="screenshots/db_recipes.png" width="400"/>
+  <img src="screenshots/data_blocks/fb_supervision.png" width="400"/>
+  <img src="screenshots/data_blocks_db_recipes.png" width="400"/>
 </p>
 
 ## HMI Interface
@@ -66,8 +66,8 @@ The HMI is divided into two main screens:
 
 
  <p align="center">
-  <img src="screenshots/overview.png" width="480"/>
-  <img src="screenshots/st_processing.png" width="480"/>
+  <img src="screenshots/hmi/overview_panel_idle.png" width="480"/>
+  <img src="screenshots/hmi/overview_panel_processing.png" width="480"/>
 </p>
 
 
@@ -76,8 +76,8 @@ The HMI is divided into two main screens:
 
 
 <p align="center">
-  <img src="screenshots/cmd_panel.png" width="480"/>
-  <img src="screenshots/cmd_automode.png" width="480"/>
+  <img src="screenshots/hmi/command_panel_start.png" width="480"/>
+  <img src="screenshots/hmi/command_panel_automode.png" width="480"/>
 </p>
 
 ALARMS / FAULTS 
@@ -85,8 +85,8 @@ ALARMS / FAULTS
 
 
 <p align="center">
-  <img src="screenshots/fault_fb_lost.png" width="480"/>
-  <img src="screenshots/fault_tm_pump.png" width="480"/>
+  <img src="screenshots/hmi/ov_panel_fault_fb_lost.png" width="480"/>
+  <img src="screenshots/hmi/ov_panel_fault_tm_pump.png" width="480"/>
 </p>
 ---
 
